@@ -1,0 +1,9 @@
+pandas
+keras
+tensorflow
+beautifulsoup4
+openpyxl
+requests
+datetime
+scikit-learn
+matplotlib
