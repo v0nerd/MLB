@@ -16,7 +16,7 @@ def build_db():
     for year in years_of_interest:
 
         year_str = str(year)
-        response = requests.get(f'https://www.thesportsdb.com/api/v1/json/60130162/eventsseason.php?id=4424&s={year_str}')
+        response = requests.get(f'https://www.thesportsdb.com/api/v1/json/60130162/eventsseason.php?id=4424&s={year_str}', timeout=60)
 
         year_details = response.json()
         individual_games = year_details['events']
