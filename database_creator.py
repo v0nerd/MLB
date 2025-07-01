@@ -1,8 +1,8 @@
 import pandas as pd
 from datetime import datetime
-import requests
 import matplotlib.pyplot as plt
 import numpy as np
+from security import safe_requests
 
 def build_db():
 
@@ -16,7 +16,7 @@ def build_db():
     for year in years_of_interest:
 
         year_str = str(year)
-        response = requests.get(f'https://www.thesportsdb.com/api/v1/json/60130162/eventsseason.php?id=4424&s={year_str}')
+        response = safe_requests.get(f'https://www.thesportsdb.com/api/v1/json/60130162/eventsseason.php?id=4424&s={year_str}')
 
         year_details = response.json()
         individual_games = year_details['events']
